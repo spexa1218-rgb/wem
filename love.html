@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>❤️</title>
+  <link rel="stylesheet" href="styles/love.css">
+</head>
+<body>
+
+<canvas id="heart"></canvas>
+
+<!-- МУЗЫКА -->
+<audio id="backgroundMusic" loop playsinline>
+  <source src="assets/blue.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script/love.js"></script>
+
+<!-- СКРИПТ МУЗЫКИ -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const music = document.getElementById("backgroundMusic");
+    const MAX_VOLUME = 0.7;
+
+    if (sessionStorage.getItem("musicStarted")) {
+        const savedTime = sessionStorage.getItem("musicTime") || 0;
+        music.currentTime = parseFloat(savedTime);
+        music.volume = MAX_VOLUME;
+        music.play().catch(() => {});
+    }
+
+    setInterval(() => {
+        if (!music.paused) {
+            sessionStorage.setItem("musicTime", music.currentTime);
+        }
+    }, 1000);
+
+});
+</script>
+
+</body>
+</html>

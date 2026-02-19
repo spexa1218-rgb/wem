@@ -41,7 +41,7 @@ function init() {
     ctx.font = `${fontSize}px Arial`;
     ctx.fillStyle = "lightblue";
     ctx.textAlign = "center";
-    ctx.fillText("как я люблю тебя", width / 2, height / 2 + (mobile ? 100 : 200));
+    ctx.fillText("🤍", width / 2, height / 2 + (mobile ? 100 : 200));
   }
 
   function heartPosition(rad) {

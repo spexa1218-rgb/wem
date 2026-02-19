@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         music.play().catch(() => {});
     } else {
         document.addEventListener("click", function startMusic() {
-            music.currentTime = 23;
+            music.currentTime = 0;
             fadeIn(music, 3000);
             sessionStorage.setItem("musicStarted", "true");
             document.removeEventListener("click", startMusic);
@@ -69,4 +69,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
-
